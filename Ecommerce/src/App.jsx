@@ -7,6 +7,7 @@ import SignUp from './components/SignUp'
 import Add from './components/Add'
 import About from './components/About'
 import {createBrowserRouter,RouterProvider,BrowserRouter,Route,Routes} from 'react-router-dom'
+import Update from './components/Update'
 
 function App() {
   const router = createBrowserRouter([
@@ -42,6 +43,7 @@ function App() {
         <Route path="/signup" element={<SignUp />} />
         <Route path="/add" element={<Add />} />
         <Route path="/about" element={<About />} />
+        <Route path="/update/:id" element={<Update />} />
       </Routes>
     </BrowserRouter>
       

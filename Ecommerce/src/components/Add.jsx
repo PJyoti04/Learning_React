@@ -1,10 +1,17 @@
 import React,{useState} from 'react'
+import { useNavigate } from 'react-router-dom'
 import './addProd.css'
 
 const Add = () => {
+    const navigate = useNavigate()
+
+    const handleRedirect = (e) => {
+        navigate(`/${e}`)
+    }
+
     const [product, setProduct] = useState({
-        p_id: Math.random()+Date.now(),
-        id: '',
+        id: Math.random()+Date.now()+"",
+        p_id: '',
         title: '',
         price: '',
         description: '',
@@ -54,12 +61,12 @@ const Add = () => {
 
   return (
     <div id="add-product">
-    <div id="add-cross">X</div>
+    <div id="add-cross" onClick={() => handleRedirect("")}>X</div>
     <div className="add-header">Add Your Product</div>
     <div className="add-input">
         <div className="product-input">
             <label >Enter Id</label><br />
-            <input type="text" name="id" id="id" placeholder="Enter Product Id .." value={product.id} onChange={handleChange} />
+            <input type="text" name="p_id" id="id" placeholder="Enter Product Id .." value={product.p_id} onChange={handleChange} />
         </div>
         <div className="product-input">
             <label >Enter Title</label>
