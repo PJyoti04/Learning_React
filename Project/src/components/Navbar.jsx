@@ -1,14 +1,28 @@
-import React from 'react'
+import React,{useState,useEffect} from 'react'
 import "./Navbar.css"
 import Accordions from './Accordion'
+import { useMediaQuery } from '@chakra-ui/react'
 
-const Navbar = () => {
+const Navbar = ({count,setCount}) => {
+  console.log(count);
+    const [nav,setNav] = useState("flex")
+    const [dis, setDis] = useState(0);
+    const change = () => {
+      setNav("flex")
+      setCount(0)
+    }
+    
+    
     let showMenu = (e) => {
         console.log(e);
+          setDis(e)
+          setNav("none")
+          setCount(1)
     }
+    
   return (
     <>
-    <nav className="nav-up">
+    <nav className="nav-up" style={{display:`${nav}`}}>
     <div className="logo">
       <svg
         className="user"
@@ -28,7 +42,7 @@ const Navbar = () => {
           d="M22.94,37c-3.63,0-5.86-.66-7-2.06-1.35-1.69-.77-4.07-.22-6.37.1-.39.2-.79.28-1.18.43-1.92,2.5-4.17,3.74-5.51l.63-.69.74.68-.63.68c-1.1,1.19-3.13,3.4-3.5,5.06-.09.4-.19.8-.28,1.2-.53,2.16-1,4.2,0,5.5S19.9,36.06,23.49,36h1c3.61.06,5.81-.49,6.77-1.69s.55-3.34,0-5.5c-.09-.4-.19-.8-.28-1.2-.36-1.61-2.32-3.84-3.38-5L27,21.79l.75-.67.68.78c1.2,1.36,3.2,3.63,3.61,5.49.08.39.18.79.28,1.18.55,2.3,1.13,4.68-.22,6.37-1.19,1.47-3.59,2.12-7.56,2.06H22.94Z"
         />
       </svg>
-      <div onClick={() => showMenu(block)} className="menu">
+      <div onClick={() => showMenu(1)} className="menu">
       <svg className="bar" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M0 96C0 78.3 14.3 64 32 64l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 128C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 288c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32L32 448c-17.7 0-32-14.3-32-32s14.3-32 32-32l384 0c17.7 0 32 14.3 32 32z"/></svg>
       <div id="menu"> MENU</div>
     </div>
@@ -299,7 +313,7 @@ const Navbar = () => {
   </nav>
 
 
-  <nav className="nav-down">
+  <nav className="nav-down" style={{display:`${nav}`}}>
     <div className="nav-down-content">
       <ul>
         <li>SHIRTS</li>
@@ -334,7 +348,7 @@ const Navbar = () => {
         <input className="input" type="text" placeholder="What are you looking for ?" />
     </div>
   </nav>
-  <Accordions disp={showMenu}></Accordions>
+  <Accordions dis={dis} setDis={setDis} on={change}></Accordions>
   </>
   )
 }

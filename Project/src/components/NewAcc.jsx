@@ -2,7 +2,7 @@ import React from "react";
 
 const NewAcc = () => {
   return (
-    <div style={{display:"flex",alignItems:"center",background:"#E4E4E4",height:"50px",border:"1px solid white",cursor:"pointer",display:"none"}}>
+    <div style={{display:"flex",alignItems:"center",background:"#E4E4E4",height:"50px",border:"1px solid white",cursor:"pointer"}}>
       <svg
         className=" icon-create-user"
         style={{ width: "40px", height: "40px",margin:"5px" }}

@@ -1,11 +1,11 @@
 import React from 'react'
 
-const MenuLogIn = () => {
+const MenuLogIn = ({disp}) => {
   return (
-    <div style={{display:"flex",alignItems:"center",background:"#E4E4E4",height:"50px",cursor:"pointer",display:"none"}}>
+    <div style={{display:"flex",alignItems:"center",background:"#E4E4E4",height:"50px",cursor:"pointer" }}>
         <svg
           className="user"
-          style={{width: "40px", height: "40px",margin:"5px"}}
+          style={{width: "40px",background:"#E4E4E4", height: "40px",margin:"5px",display:"flex"}}
           viewBox="0 0 48 48"
           aria-hidden="true"
           aria-label

@@ -1,9 +1,15 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
-const MenuHead = () => {
+const MenuHead = ({on,home}) => {
+  // console.log(onAction);
+  const handleClick = () =>{
+    on()
+    home()
+  }
   return (
-    <div style={{height:"65px",display:"flex",alignItems:"center",justifyContent:"space-between",padding:"25px",display:"none"}}>
-        <svg className="header_small" style={{width:"85px",cursor:"pointer"}} viewBox="0 0 353 82.01" aria-label>
+    <div style={{height:"65px",display:"flex",alignItems:"center",justifyContent:"space-between",padding:"25px"}} >
+        <Link to='/product'><svg className="header_small" style={{width:"85px",cursor:"pointer"}} viewBox="0 0 353 82.01" aria-label>
             <path
               fill="#001F49"
               className="cls-1"
@@ -75,8 +81,8 @@ const MenuHead = () => {
               className="cls-1"
               d="M332,81.6V52H319.16l1.26-4.11H353L352.9,52H340.07V81.6Z"
             />
-        </svg>
-        <div style={{width:"40px",display:"flex",flexDirection:"column",alignItems:"center",cursor:"pointer"}}>
+        </svg></Link>
+        <div onClick={handleClick} style={{width:"40px",display:"flex",flexDirection:"column",alignItems:"center",cursor:"pointer"}}>
             <h1>X</h1>
             <h2 style={{fontSize:"14px"}}>Close</h2>
         </div>

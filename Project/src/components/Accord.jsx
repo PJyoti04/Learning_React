@@ -8,12 +8,12 @@ import {
     Box,
   } from "@chakra-ui/react";
 
-const Accord = ({item,disp}) => {
-    console.log(disp);
+const Accord = ({item}) => {
+    // console.log(disp);
   return (
     <>
           {/* <Accordion allowToggle> */}
-        <AccordionItem bgColor={"#F5F5F5"} border={"1px"} borderColor={"white"} padding={"6px"} display={"none"}>
+        <AccordionItem bgColor={"#F5F5F5"} border={"1px"} borderColor={"white"} padding={"6px"} >
           <h2>
             <AccordionButton >
               <Box as="span" flex="1" textAlign="left" fontSize={13}>
