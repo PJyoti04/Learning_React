@@ -2,9 +2,11 @@ import React,{useState,useEffect} from 'react'
 import "./Navbar.css"
 import Accordions from './Accordion'
 import { useMediaQuery } from '@chakra-ui/react'
+import { useNavigate } from 'react-router-dom'
 
 const Navbar = ({count,setCount}) => {
   console.log(count);
+  const navigate = useNavigate();
     const [nav,setNav] = useState("flex")
     const [dis, setDis] = useState(0);
     const change = () => {
@@ -24,7 +26,7 @@ const Navbar = ({count,setCount}) => {
     <>
     <nav className="nav-up" style={{display:`${nav}`}}>
     <div className="logo">
-      <svg
+      <svg onClick={() => navigate('/login')}
         className="user"
         style={{width: "40px", height: "40px"}}
         viewBox="0 0 48 48"
@@ -47,7 +49,7 @@ const Navbar = ({count,setCount}) => {
       <div id="menu"> MENU</div>
     </div>
 
-      <svg className="header_large"  viewBox="0 0 681.14 70.62" aria-label>
+      <svg onClick={() => navigate('/')} className="header_large"  viewBox="0 0 681.14 70.62" aria-label>
         <path
           fill="#001F49"
           className="cls-1"
@@ -211,7 +213,7 @@ const Navbar = ({count,setCount}) => {
         />
       </svg>
 
-      <svg className="header_small"  viewBox="0 0 353 82.01" aria-label>
+      <svg onClick={() => navigate('/')} className="header_small"  viewBox="0 0 353 82.01" aria-label>
           <path
             fill="#001F49"
             className="cls-1"
@@ -316,21 +318,21 @@ const Navbar = ({count,setCount}) => {
   <nav className="nav-down" style={{display:`${nav}`}}>
     <div className="nav-down-content">
       <ul>
-        <li>SHIRTS</li>
+        <li className='no'>SHIRTS</li>
         <li className="line">|</li>
-        <li>POLOS</li>
+        <li className='no'>POLOS</li>
         <li className="line">|</li>
-        <li>SUITS</li>
+        <li className='no'>SUITS</li>
         <li className="line">|</li>
-        <li>TROUSERS</li>
+        <li className='no'>TROUSERS</li>
         <li className="line">|</li>
-        <li>KNITWEAR</li>
+        <li className='no'>KNITWEAR</li>
         <li className="line">|</li>
-        <li>JACKETS & COATS</li>
+        <li className='no'>JACKETS & COATS</li>
         <li  className="line">|</li>
-        <li>SHOES</li>
+        <li className='no'>SHOES</li>
         <li  className="line">|</li>
-        <li>ACCESSORIES</li>
+        <li className='no'>ACCESSORIES</li>
         <li  className="line">|</li>
         <li className="red">SALE</li>
       </ul>

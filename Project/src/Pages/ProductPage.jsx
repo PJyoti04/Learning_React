@@ -1,8 +1,10 @@
 import React from "react";
 import "./ProductPage.css";
+import IndividualProduct from "./IndividualProduct";
 
 const ProductPage = () => {
   return (
+    <div>
     <div className="product">
       <div className="product-head">
         <h1>PRODUCT</h1>
@@ -25,6 +27,28 @@ const ProductPage = () => {
           alt=""
         />
       </div>
+    </div>
+    <div className="prod-main">
+    <div className="sort">
+        <select  name="SORT BY" id="">
+        <option value="">SORT </option>
+          <option value="price-asc">Price: Low to High</option>
+          <option value="price-desc">Price: High to Low</option>
+          <option value="name-asc">Name: A to Z</option>
+          <option value="name-desc">Name: Z to A</option>
+        </select>
+        <select  name="FILTER" id="">
+        <option value="">FILTER</option>
+          <option value="price-asc">Price: Low to High</option>
+          <option value="price-desc">Price: High to Low</option>
+          <option value="name-asc">Name: A to Z</option>
+          <option value="name-desc">Name: Z to A</option>
+        </select>
+    </div>
+    <div className="ind-prod">
+    <IndividualProduct></IndividualProduct>
+    </div>
+    </div>
     </div>
   );
 };

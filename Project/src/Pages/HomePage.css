@@ -107,6 +107,24 @@ video {
   height: auto;
   margin-top: 30px;
 }
+.edit-head{
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin: 1vw;
+}
+.edit-head .head2{
+  text-decoration: underline;
+  font-size: 0.8vw;
+}
+.edit-head .head1{
+  font-size: 1vw;
+  font-weight: 500;
+  letter-spacing: 1px;
+}
+.edit-head .head2:hover{
+  text-decoration: none;
+}
 @media (max-width: 800px) {
   video {
     display: none;
@@ -186,6 +204,15 @@ video {
     font-weight: 500;
     font-size: 2.3vw;
   }
+  .edit-head .head2{
+    text-decoration: underline;
+    font-size: 1.6vw;
+  }
+  .edit-head .head1{
+    font-size: 1.7vw;
+    font-weight: 500;
+    letter-spacing: 0.1vw;
+  }
 }
 
 @media (max-width: 400px) {
@@ -202,5 +229,14 @@ video {
   .wedtext-two {
     font-weight: 500;
     font-size: 3vw;
+  }
+  .edit-head .head2{
+    text-decoration: underline;
+    font-size: 1.8vw;
+  }
+  .edit-head .head1{
+    font-size: 2.4vw;
+    font-weight: 500;
+    letter-spacing: 1px;
   }
 }

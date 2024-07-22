@@ -126,7 +126,7 @@
     background-color: #EBEDF3;
     align-items: center;
 }
-.nav-down-content li{
+.nav-down-content .no{
     list-style-type:none;
     font-size: 12px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -139,8 +139,15 @@
     font-size: 9px;
     font-weight: 500;
     opacity: 0.5;
+    list-style-type:none;
 }
 .red{
+    list-style-type:none;
+    font-size: 12px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 12px;
+    background-color: #EBEDF3;
+    cursor: pointer;
     color: #BC2E35;
     font-weight: 500;
 }

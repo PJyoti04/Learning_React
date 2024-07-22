@@ -5,6 +5,8 @@ import { Routes,Route } from 'react-router-dom'
 import Product from './Pages/Product'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
+import SignUp from './Pages/SignUp'
+import LoginPage from './Pages/LoginPage'
 function App() {
   const [count, setCount] = useState(0)
   return (
@@ -13,12 +15,13 @@ function App() {
     <Routes>
         <Route path="/" element={<Home count={count} />} />
         <Route path="/product" element={<Product count={count} />} />
-        {/* <Route path="/signup" element={<SignUp />} />
-        <Route path="/add" element={<Add />} />
+        <Route path="/signup" element={<SignUp count={count} />} />
+        <Route path="/login" element={<LoginPage count={count} />} />
+        {/*<Route path="/add" element={<Add />} />
         <Route path="/about" element={<About />} />
         <Route path="/update/:id" element={<Update />} /> */}
       </Routes>
-      <Footer></Footer>
+      <Footer count={count}></Footer>
     {/* <Home></Home> */}
     </>
   )

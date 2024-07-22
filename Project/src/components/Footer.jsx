@@ -1,10 +1,11 @@
 import React from "react";
 import "./footer.css";
+import '../App.css'
 
-const Footer = () => {
+const Footer = ({count}) => {
   return (
     <>
-      <footer className="footer">
+      <footer className={`footer ${count === 1 ? 'slide-notvisible' : 'slide-visiblee'}`}>
         <div className="full-bar">
           <div className="fullBarContainer">
             <span className="fullBarText">

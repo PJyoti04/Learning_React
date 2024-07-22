@@ -1,8 +1,9 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const NewAcc = () => {
   return (
-    <div style={{display:"flex",alignItems:"center",background:"#E4E4E4",height:"50px",border:"1px solid white",cursor:"pointer"}}>
+    <Link to='/signup'><div style={{display:"flex",alignItems:"center",background:"#E4E4E4",height:"50px",border:"1px solid white",cursor:"pointer"}}>
       <svg
         className=" icon-create-user"
         style={{ width: "40px", height: "40px",margin:"5px" }}
@@ -31,7 +32,7 @@ const NewAcc = () => {
         />
       </svg>
       <h2 style={{margin:"5px",fontSize:"13px"}}>CREATE AN ACCOUNT</h2>
-    </div>
+    </div></Link>
   );
 };
 
