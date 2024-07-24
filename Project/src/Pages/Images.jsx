@@ -2,16 +2,17 @@ import React from 'react'
 import { Image } from '@chakra-ui/react'
 import './Images.css'
 
-const Images = () => {
+const Images = ({obj}) => {
+  // console.log(obj);
   return (
     <div className="hov" style={{margin:"8vw 2vw"}}>
         <Image
           borderRadius="full"
           boxSize="20vw"
-          src="https://bit.ly/dan-abramov"
+          src={obj.img}
           alt="Dan Abramov"
         />
-        <h1 style={{textAlign:"center",fontSize:"2.5vw",fontWeight:"500"}}>Shirts</h1>
+        <h1 style={{textAlign:"center",fontSize:"2.5vw",fontWeight:"500"}}>{obj.name}</h1>
     </div>
   )
 }

@@ -13,9 +13,9 @@
 }
 
 .search{
-    width: 4vw;
-    height: 20px;
-    margin-right:3px ;
+    width: 2.5vw;
+    height: 15px;
+    /* margin-right:1px ; */
     background-color: #EBEDF3;
     cursor: pointer;
 }
@@ -25,10 +25,15 @@
     cursor: pointer;
 }
 .cart-box{
-    width: 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 3vw;
+    /* border: 1px solid; */
     /* height: 20px; */
     background:white;
-    margin-left: 3vw;
+    margin-left: 2vw;
+    margin-right: 1vw;
 }
 .nav-up{
     display: flex;
@@ -50,12 +55,12 @@
     border-radius: 5px;
     display: flex;
     align-items: center;
-    margin-left: 150px;
+    margin-left: 10vw;
     background-color: #EBEDF3;
 }
 .search-box input{
-    width: 300px;
-    height: 30px;
+    width: 18vw;
+    height: 38px;
     padding:5px;
     font-size: 15px;
     background-color: #EBEDF3;
@@ -130,10 +135,18 @@
     list-style-type:none;
     font-size: 12px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    margin: 12px;
+    /* margin: 12px; */
+    width: auto;
+    padding: 13px 20px;
     color: #373737;
     background-color: #EBEDF3;
     cursor: pointer;
+}
+.no:hover,.red:hover{
+    background-color: white;
+    /* padding: 13px 19px; */
+    /* scale: 1.1; */
+    font-weight: 600;
 }
 .line{
     font-size: 9px;
@@ -145,7 +158,9 @@
     list-style-type:none;
     font-size: 12px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    margin: 12px;
+    /* margin: 12px; */
+    width: auto;
+    padding: 13px 20px;
     background-color: #EBEDF3;
     cursor: pointer;
     color: #BC2E35;
@@ -196,6 +211,15 @@ input:focus{
     }
     .search{
         background: white;
+        height: 20px;
+    }
+    .cart{
+        height: 3vw;
+    }
+    .cart-box{
+        width: 5vw;
+        margin-left: 3vw;
+        margin-right: 2vw;
     }
     .nav-down{
         height: 40px;
@@ -224,15 +248,19 @@ input:focus{
         /* border-radius: 10px; */
     }
     .search-down{
-        width: 15px;
+        width: 18px;
+        /* height: 15px; */
         background: white;
         padding-left: 5px;
         cursor: pointer;
     }
 }
-/* @media (max-width:400px){
-    .cart-box{
-        width: 12px;
-
+@media (max-width:400px){
+    .cart{
+        height: 4vw;
     }
-} */
+    .search{
+        /* height: 25vw; */
+        width: 3.5vw;
+    }
+}

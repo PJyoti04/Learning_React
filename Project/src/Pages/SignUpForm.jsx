@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useContext, useState} from "react";
 import "./SignUpForm.css";
 import { useNavigate } from "react-router-dom";
 import {
@@ -19,9 +19,8 @@ import {
     MenuItem,
     useBreakpointValue,
 } from "@chakra-ui/react";
+import { AuthContext } from "../context/AuthContext";
 import {ChevronDownIcon} from "@chakra-ui/icons";
-// import "@fontsource-variable/montserrat";
-// import MyInput from "./MyInput";
 import Guarantee from "./images/Guarantee.svg";
 import Security from "./images/Security.svg";
 
@@ -42,6 +41,7 @@ const validatePassword = (password) => {
 
 const SignUpForm = () => {
     const navigate = useNavigate()
+    let {toggleLogin,setName} = useContext(AuthContext)
     const [error,setError] = useState("")
     const [user, setUser] = useState({
         fname:'',
@@ -79,8 +79,10 @@ const SignUpForm = () => {
             body:JSON.stringify(user)
         })
         let data = await postRes.json()
-        console.log(data);
+        // console.log(data);
         setError('')
+        setName(user.fname)
+        toggleLogin()
         navigate('/')
     }
     // const nav = useNavigate()
@@ -176,6 +178,7 @@ const SignUpForm = () => {
                                 borderRadius="1px"
                                 _hover={{}}
                                 name="fname"
+                                required
                                 value={user.firstname} onChange={handleChange}
                             />
                         </div>

@@ -1,8 +1,13 @@
-import React from "react";
+import React,{useState} from "react";
 import "./ProductPage.css";
 import IndividualProduct from "./IndividualProduct";
 
 const ProductPage = () => {
+  const [sort, setSort] = useState('')
+  const handleChange = (e) => {
+    setSort(e.target.value);
+  };
+
   return (
     <div>
     <div className="product">
@@ -30,23 +35,23 @@ const ProductPage = () => {
     </div>
     <div className="prod-main">
     <div className="sort">
-        <select  name="SORT BY" id="">
+        <select  name="SORT BY" id="" onChange={handleChange}>
         <option value="">SORT </option>
-          <option value="price-asc">Price: Low to High</option>
-          <option value="price-desc">Price: High to Low</option>
-          <option value="name-asc">Name: A to Z</option>
-          <option value="name-desc">Name: Z to A</option>
+          <option value="price">Price: Low to High</option>
+          <option value="-price">Price: High to Low</option>
+          <option value="name">Name: A to Z</option>
+          <option value="-name">Name: Z to A</option>
         </select>
-        <select  name="FILTER" id="">
+        <select  name="FILTER" id="" onChange={handleChange}>
         <option value="">FILTER</option>
-          <option value="price-asc">Price: Low to High</option>
-          <option value="price-desc">Price: High to Low</option>
-          <option value="name-asc">Name: A to Z</option>
-          <option value="name-desc">Name: Z to A</option>
+          <option value="rating">Rating: Low to High</option>
+          <option value="-rating">Rating: High to Low</option>
+          <option value="name">Name: A to Z</option>
+          <option value="-name">Name: Z to A</option>
         </select>
     </div>
     <div className="ind-prod">
-    <IndividualProduct></IndividualProduct>
+    <IndividualProduct sort={sort}></IndividualProduct>
     </div>
     </div>
     </div>

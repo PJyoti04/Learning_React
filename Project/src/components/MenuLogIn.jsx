@@ -1,9 +1,13 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-const MenuLogIn = ({disp}) => {
+const MenuLogIn = ({on,home}) => {
+  const handleOpen = () => {
+    on()
+    home()
+  }
   return (
-    <Link to="/login"><div style={{display:"flex",alignItems:"center",background:"#E4E4E4",height:"50px",cursor:"pointer" }}>
+    <Link to="/login"><div onClick={() => handleOpen()} style={{display:"flex",alignItems:"center",background:"#E4E4E4",height:"50px",cursor:"pointer" }}>
         <svg
           className="user"
           style={{width: "40px",background:"#E4E4E4", height: "40px",margin:"5px",display:"flex"}}

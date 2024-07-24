@@ -32,6 +32,7 @@ video {
   font-size: 80px;
   font-weight: 550;
   line-height: 100px;
+  color: white;
 }
 .text-two {
   font-size: 40px;
@@ -51,8 +52,12 @@ video {
 .carousel {
   display: none;
 }
-#squareImage {
-  display: flex;
+#squareImage{
+  display: none;
+}
+#slide-squareImage{
+  width: 100%;
+  /* display: flex; */
   /* flex-wrap: wrap; */
   height: auto;
   margin-top: 30px;
@@ -85,10 +90,12 @@ video {
 .wedtext-one {
   font-size: 3.5vw;
   font-weight: 600;
+  color: white;
 }
 .wedtext-two {
   /* font-weight: 500; */
   font-size: 1.4vw;
+  color: white;
 }
 .button {
   width: 230px;
@@ -157,6 +164,8 @@ video {
   }
   .carousel {
     display: flex;
+    flex-direction: column;
+    /* margin: 0px; */
     cursor: pointer;
   }
   #squareImage {
@@ -166,6 +175,9 @@ video {
     margin-top: 0px;
     width: 100%;
     justify-content: center;
+  }
+  #slide-squareImage{
+    display: none;
   }
   .wedding {
     width: 100%;

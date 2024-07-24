@@ -1,0 +1,130 @@
+*{
+    margin: 0;
+    padding: 0;
+    color: rgb(55,55,55);
+    font-family: Arial;
+}
+header{
+    border-bottom:2px solid rgb(102,10,102);
+}
+.flex{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.b-border{
+    border-bottom: 2px solid rgb(216,216,216);
+}
+.mainHeading{
+    height: 115px;
+    margin:0px auto 30px;
+    width: 70vw;
+}
+.mainHeading .leftHeading h1{/*bag*/
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 40px;
+    margin: 16px 0px;
+}
+.rightHeading img{
+    height: 25px;
+    width: 25px;
+    margin-right: 10px;
+    color: rgb(0,31,73);
+}
+.rightHeading p{
+    font-size: 14px;
+    line-height: 18px;
+}
+.cartItemsContainer{
+    width: 50vw;
+    margin: 0px auto;
+}
+.itemStat{
+    height: 83px;
+    margin-bottom: 20px;
+}
+.itemStat h2{
+    margin: 40px 0px 30px;
+    font-size: 20px;
+    line-height: 22px;
+}
+.item{
+    border-bottom: 2px solid rgb(175,175,175);
+    padding-bottom: 30px;
+    margin-bottom: 20px;
+}
+
+.itemTitle h3{
+    font-size: 22px;
+    line-height: 31px;
+    margin: 0px 0px 2px;
+}
+.itemTitle p{
+    font-size: 12px;
+    color: rgb(153,153,153);
+    line-height: 22px;
+}
+.itemDetails{
+    padding:20px 20px 20px 0px;
+}
+
+.productImg{
+    width:160px;
+    height: auto;
+    align-self: flex-start;
+}
+.moreDetailsContainer{
+    width: 70%;
+}
+.size-price{
+    padding-bottom: 25px;
+}
+.size-price p{
+    color: rgb(102,102,102);
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 18px;
+}
+.productGift{
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    padding: 30px 0px;
+}
+.productGift img{
+    margin: 0px 15px auto 0px;
+}
+.productGift a{
+    color: rgb(94, 94, 94);
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 18px;
+}
+.quantity-netPrice{
+    display: flex;
+    flex-direction: column;
+    color: rgb(94, 94, 94);
+    padding-top: 15px;
+    display: inline-block;
+}
+label{
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 38px;
+    width: 110px;
+    padding: auto 5px;
+}
+.quantity-netPrice select{
+    width: 110px;
+    height:35px;
+    border:1px solid rgb(186,186,186);
+    border-radius: 4px;
+}
+.netPriceProduct{
+    text-align: right;
+    font-size: 14px;
+    color: rgb(55,55,55);
+    font-weight: 600;
+    line-height: 35px;
+}

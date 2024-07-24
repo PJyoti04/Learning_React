@@ -9,7 +9,7 @@ import MenuHead from "./MenuHead";
 import './Accordion.css'
 
 const Accordions = ({dis,setDis,on}) => {
-    console.log(on);
+    // console.log(on);
     let arr = ["SHIRTS","POLOS","SUITS","TROUSERS","KNITWEAR","JACKETS & COATS","SHOES","ACCESSORIES","SALE"]
   return (
 <div className={`slide-container ${dis === 1 ? 'slide-visible' : ''}`}>    
@@ -19,8 +19,8 @@ const Accordions = ({dis,setDis,on}) => {
         <Accord key={index} item={item}  />
       ))}
     </Accordion>
-    <NewAcc></NewAcc>
-    <MenuLogIn></MenuLogIn>
+    <NewAcc on={() => setDis(0)} home={on}></NewAcc>
+    <MenuLogIn on={() => setDis(0)} home={on}></MenuLogIn>
     </div>
   );
 };

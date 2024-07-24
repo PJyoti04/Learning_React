@@ -1,37 +1,3 @@
-// // Dropdown.js
-// import {Menu, MenuButton, MenuList, MenuItem, Button} from "@chakra-ui/react";
-// import {ChevronDownIcon} from "@chakra-ui/icons";
-// import React from "react";
-
-// const Dropdown = () => {
-//     return (
-//         <Menu>
-//             <MenuButton
-//                 as={Button}
-//                 rightIcon={<ChevronDownIcon />}
-//                 bg="white"
-//                 borderRadius="0px"
-//                 border="1px solid rgb(87, 84, 84)"
-//                 height="50px"
-//                 width="42%"
-//             >
-//                 CHOOSE A TITLE
-//             </MenuButton>
-//             <MenuList maxHeight="290px" overflowY="auto" width="42%" border="1px solid #c1c1c1">
-//                 <MenuItem height ="50px" >MR</MenuItem>
-//                 <MenuItem height ="50px" >MRS</MenuItem>
-//                 <MenuItem height ="50px" >MS</MenuItem>
-//                 <MenuItem height ="50px" >MISS</MenuItem>
-//                 <MenuItem height ="50px" >DOCTOR</MenuItem>
-//                 <MenuItem height ="50px" >OTHER</MenuItem>
-//                 <MenuItem height ="50px" >RATHER NOT SAY</MenuItem>
-//             </MenuList>
-//         </Menu>
-//     );
-// };
-
-// export default Dropdown;
-
 import React, {useState} from "react";
 import {Menu, MenuButton, MenuList, MenuItem, Button, FormControl, FormErrorMessage, Box} from "@chakra-ui/react";
 import {ChevronDownIcon} from "@chakra-ui/icons";

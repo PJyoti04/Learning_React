@@ -2,7 +2,8 @@ import React,{useState,useEffect} from 'react'
 import ProductCard from './ProductCard'
 import './ProductCard.css'
 
-const IndividualProduct = () => {
+const IndividualProduct = ({sort}) => {
+  console.log(sort);
     // let arr = [{img:"https://www.charlestyrwhitt.com/dw/image/v2/AAWJ_PRD/on/demandware.static/-/Sites-ctshirts-master/default/dw94487adb/hi-res/TRC0270DGY_MODEL_FULL.jpg?sw=860&sh=1080&sm=fit&q=42",
     //     name:"Ultimate Non-Iron Chinos-Dark Grey",
     //     price:"$ 99.00",
@@ -29,22 +30,22 @@ const IndividualProduct = () => {
   
   
     async function getData() {
-      let res = await fetch(`http://localhost:3000/products?_page=${page}&_per_page=12&_sort=""`);
+      let res = await fetch(`http://localhost:3000/products?_page=${page}&_per_page=12&_sort=${sort}`);
       let fetchedData = await res.json();
       setData(fetchedData.data);
       setLast(fetchedData.last)
-      console.log(fetchedData);
+      // console.log(fetchedData);
     }
   
     useEffect(() => {
       getData();
-    }, [page,last]);
+    }, [page,last,sort]);
   return (
     <>
     <div className='prod-div'>
         {
             data.map((prod,index)=>
-                <ProductCard key={index} img={prod.imgSrc} name={prod.name} price={prod.price} />
+                <ProductCard key={index} img={prod.imgSrc} name={prod.name} price={prod.price} id={prod.id} />
             )
         }
     </div>

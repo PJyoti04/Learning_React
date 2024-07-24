@@ -59,6 +59,12 @@
     border: 1px solid rgb(0,31,73);
     width: 100%;
     height: 47.2px;
+    padding: 5px;
+    font-size: 1vw;
+    font-weight: 500;
+}
+.ip:focus{
+    border:2px solid rgb(6, 6, 85) ;
 }
 .l-box h6{
     text-decoration: underline;
@@ -96,6 +102,11 @@
     }
     .main-header{
         margin: 20px 0px 60px 10px;
+    }
+    .ip{
+        font-size: 2vw;
+        font-weight: 500;
+        color: rgb(8, 8, 88);
     }
     .main-header{
         color: rgb(0,31,73);

@@ -1,19 +1,19 @@
 import {useState} from "react";
 import "./Login.css";
+import { useContext } from "react";
+import { AuthContext } from "../context/AuthContext";
 import { useNavigate } from "react-router-dom";
 import orderHistory from "./images/order_history.svg";
 import addressBook from "./images/address_book.svg";
 import personalDetails from "./images/personal_details.svg";
 
 const Login = () => {
+    let {toggleLogin,setName} = useContext(AuthContext)
     const nav = useNavigate();
+    const [showPassword, setShowPassword] = useState(false);
     const [email,setEmail] = useState('')
     const [password,setPassword] = useState('')
     const [error,setError] = useState({email:"",password:""})
-    // const handleRedirect = (e) => {
-    //     console.log(e);
-    //     navigate(`/${e}`) 
-    // }
 
     const handleLogin = async () => {
         const res = await fetch('http://localhost:3000/signup')
@@ -28,6 +28,7 @@ const Login = () => {
                 uFound = 1
                 if(user.password === password){
                     pFound = 1
+                    setName(user.fname)
                     break
                 }
             }
@@ -42,8 +43,13 @@ const Login = () => {
         }
 
         setError({email:'',password:''})
-
+        alert("Login Successful")
+        toggleLogin()
         nav('/')
+    }
+
+    const toggleShowPassword = () => {
+        setShowPassword(!showPassword);
     }
 
     return (
@@ -52,11 +58,15 @@ const Login = () => {
             <div className="login-container">
                 <div className="login-box l-box">
                     <span>Email address</span>
-                    <input className="m-size ip" type="text" value={email} onChange={(e) => setEmail(e.target.value)}/>
+                    <input className="m-size ip" name="email" type="email" value={email} onChange={(e) => setEmail(e.target.value)}/>
                     {error.email && <div id="span">{error.email}</div>}
                     <span>Password</span>
-                    <input className="m-size ip" type="text" value={password} onChange={(e) => setPassword(e.target.value)}/>
+                    <input className="m-size ip" type={showPassword ? "text" : "password"} value={password} onChange={(e) => setPassword(e.target.value)}/>
                     {error.password && <div id="span2">{error.password}</div>}
+                    <label>
+                        <input type="checkbox" checked={showPassword} onChange={toggleShowPassword} />
+                        Show Password
+                    </label>
                     <h6>Forgotten your password</h6>
                     <button onClick={() => handleLogin()} className="basicButton mediumButton">log in</button>
                 </div>

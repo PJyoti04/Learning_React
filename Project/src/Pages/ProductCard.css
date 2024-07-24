@@ -16,6 +16,8 @@
 .card h1{
     margin: 1vw 0vw;
     font-size: 0.9vw;
+    height: 3vw;
+    /* background: #000; */
 }
 .card h4{
     font-weight: 700;
@@ -28,7 +30,17 @@
     border-right: 1px solid #000;
     color: white;
 }
-
+.prod button{
+    width: inherit;
+    height: 3vw;
+    background: #0e0232;
+    color: white;
+    border-radius: 0.2vw;
+}
+#Found{
+    color: red;
+    font-size: 1vw;
+}
 @media (max-width:800px){
     .card{
         height: auto;
@@ -48,9 +60,17 @@
     .card h1{
         margin: 1vw 0vw;
         font-size: 1.8vw;
+        height: 6vw;
     }
     .card h4{
         font-weight: 700;
         font-size: 1.6vw;
+    }
+    .prod button{
+        width: inherit;
+        height: 6vw;
+        background: #0e0232;
+        color: white;
+        border-radius: 0.5vw;
     }
 }
